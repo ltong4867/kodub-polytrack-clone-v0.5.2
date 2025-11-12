@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polytrack - Polyrhythmic Sequencer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Polytrack</h1>
+            <p class="subtitle">Polyrhythmic Sequencer</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <button id="playBtn" class="btn btn-primary">
+                    <span class="play-icon">▶</span> Play
+                </button>
+                <button id="stopBtn" class="btn btn-secondary">
+                    <span class="stop-icon">■</span> Stop
+                </button>
+                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+            </div>
+
+            <div class="control-group">
+                <label for="tempo">Tempo (BPM):</label>
+                <input type="range" id="tempo" min="60" max="200" value="120">
+                <span id="tempoValue">120</span>
+            </div>
+
+            <div class="control-group">
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" min="0" max="100" value="70">
+                <span id="volumeValue">70</span>
+            </div>
+        </div>
+
+        <div class="tracks-container">
+            <!-- Track 1 -->
+            <div class="track">
+                <div class="track-header">
+                    <h3>Track 1</h3>
+                    <div class="track-controls">
+                        <label>Steps: </label>
+                        <select class="steps-select" data-track="0">
+                            <option value="4">4</option>
+                            <option value="8" selected>8</option>
+                            <option value="12">12</option>
+                            <option value="16">16</option>
+                        </select>
+                        <label>Sound: </label>
+                        <select class="sound-select" data-track="0">
+                            <option value="kick">Kick</option>
+                            <option value="snare">Snare</option>
+                            <option value="hihat">Hi-Hat</option>
+                            <option value="clap">Clap</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid" id="grid0"></div>
+            </div>
+
+            <!-- Track 2 -->
+            <div class="track">
+                <div class="track-header">
+                    <h3>Track 2</h3>
+                    <div class="track-controls">
+                        <label>Steps: </label>
+                        <select class="steps-select" data-track="1">
+                            <option value="4">4</option>
+                            <option value="8">8</option>
+                            <option value="12" selected>12</option>
+                            <option value="16">16</option>
+                        </select>
+                        <label>Sound: </label>
+                        <select class="sound-select" data-track="1">
+                            <option value="kick">Kick</option>
+                            <option value="snare" selected>Snare</option>
+                            <option value="hihat">Hi-Hat</option>
+                            <option value="clap">Clap</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid" id="grid1"></div>
+            </div>
+
+            <!-- Track 3 -->
+            <div class="track">
+                <div class="track-header">
+                    <h3>Track 3</h3>
+                    <div class="track-controls">
+                        <label>Steps: </label>
+                        <select class="steps-select" data-track="2">
+                            <option value="4">4</option>
+                            <option value="8">8</option>
+                            <option value="12">12</option>
+                            <option value="16" selected>16</option>
+                        </select>
+                        <label>Sound: </label>
+                        <select class="sound-select" data-track="2">
+                            <option value="kick">Kick</option>
+                            <option value="snare">Snare</option>
+                            <option value="hihat" selected>Hi-Hat</option>
+                            <option value="clap">Clap</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid" id="grid2"></div>
+            </div>
+
+            <!-- Track 4 -->
+            <div class="track">
+                <div class="track-header">
+                    <h3>Track 4</h3>
+                    <div class="track-controls">
+                        <label>Steps: </label>
+                        <select class="steps-select" data-track="3">
+                            <option value="4">4</option>
+                            <option value="8" selected>8</option>
+                            <option value="12">12</option>
+                            <option value="16">16</option>
+                        </select>
+                        <label>Sound: </label>
+                        <select class="sound-select" data-track="3">
+                            <option value="kick">Kick</option>
+                            <option value="snare">Snare</option>
+                            <option value="hihat">Hi-Hat</option>
+                            <option value="clap" selected>Clap</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid" id="grid3"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Click on the grid cells to create polyrhythmic patterns. Each track can have different step counts.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
